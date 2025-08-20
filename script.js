@@ -61,7 +61,6 @@ class ThemeManager {
             themeBtn.textContent = this.isDark ? '🌙' : '🌞';
             setTimeout(() => {
                 themeBtn.style.transform = 'rotate(0deg) scale(1)';
-                themeBtn.textContent = '🌗';
             }, 500);
         }
     }
