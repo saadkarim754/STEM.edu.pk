@@ -103,6 +103,27 @@
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
     --border-color: #334155;
+    --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-large: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+
+.dark-mode .program-card,
+.dark-mode .achievement-card,
+.dark-mode .contact-card {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(16, 185, 129, 0.1));
+    border-color: rgba(var(--primary-color-rgb), 0.2);
+}
+
+.dark-mode .program-card:hover,
+.dark-mode .achievement-card:hover,
+.dark-mode .contact-card:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(16, 185, 129, 0.15));
+    border-color: rgba(var(--primary-color-rgb), 0.3);
 }
 
 .dark-mode .navbar {
@@ -175,12 +196,14 @@ body {
     color: var(--text-primary);
     background-color: var(--background-color);
     overflow-x: hidden;
+    width: 100%;
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 /* Color Theme Toggle */
@@ -341,9 +364,10 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -451,9 +475,9 @@ body {
 }
 
 .hero-content {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -636,6 +660,7 @@ body {
     overflow: hidden;
     z-index: 0;
 }
+
 
 .bg-shape {
     position: absolute;
@@ -1488,6 +1513,12 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .container,
+    .nav-container,
+    .hero-content {
+        padding: 0 20px;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1589,11 +1620,11 @@ body {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 16px;
+        padding: 0 10px;
     }
 
     .nav-container {
-        padding: 0 16px;
+        padding: 0 10px;
     }
 
     .hero {
@@ -1923,6 +1954,7 @@ body {
     flex-direction: column;
     gap: 15px;
 }
+
 
 .nav-dot {
     width: 12px;
