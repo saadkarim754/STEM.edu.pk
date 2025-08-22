@@ -187,6 +187,7 @@ class SectionNavigationManager {
                 'home': 'Home',
                 'about': 'About', 
                 'programs': 'Programs',
+                'olympiads': 'Olympiads',
                 'process': 'Process',
                 'faq': 'FAQ',
                 'partners': 'Partners',
