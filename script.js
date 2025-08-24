@@ -1038,6 +1038,87 @@ window.addEventListener('unhandledrejection', (event) => {
 // Initialize the website
 const stemWebsite = new STEMWebsite();
 
+// Image Slideshow Functionality
+class ImageSlideshow {
+    constructor(containerSelector) {
+        this.container = document.querySelector(containerSelector);
+        if (!this.container) {
+            console.log('Slideshow container not found!');
+            return;
+        }
+        
+        this.images = this.container.querySelectorAll('.slide-image');
+        this.currentIndex = 0;
+        this.intervalTime = 6000; // 6 seconds for 2.5s rotation + display time
+        this.interval = null;
+        
+        console.log('Slideshow initialized with', this.images.length, 'images');
+        this.init();
+    }
+
+    init() {
+        if (this.images.length > 0) {
+            // Show first image
+            this.images[0].classList.add('active');
+            console.log('First image activated');
+            
+            if (this.images.length > 1) {
+                this.startSlideshow();
+                console.log('Slideshow started');
+            }
+        }
+    }
+
+    showImage(index) {
+        console.log('Rotating to image', index + 1);
+        
+        // Current image rotates out
+        const currentImage = this.images[this.currentIndex];
+        currentImage.classList.remove('active');
+        currentImage.classList.add('slide-out');
+        
+        // Next image rotates in after a small delay for smoother effect
+        setTimeout(() => {
+            this.images[index].classList.remove('slide-out');
+            this.images[index].classList.add('active');
+            this.currentIndex = index;
+        }, 50);
+        
+        // Clean up after full rotation
+        setTimeout(() => {
+            this.images.forEach((img, i) => {
+                if (i !== this.currentIndex) {
+                    img.classList.remove('active', 'slide-out');
+                }
+            });
+        }, 2600); // After 2.5s transition + buffer
+    }
+
+    nextImage() {
+        const nextIndex = (this.currentIndex + 1) % this.images.length;
+        this.showImage(nextIndex);
+    }
+
+    startSlideshow() {
+        this.interval = setInterval(() => {
+            this.nextImage();
+        }, this.intervalTime);
+    }
+
+    stopSlideshow() {
+        if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+        }
+    }
+}
+
+// Initialize slideshow when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing slideshow...');
+    const slideshow = new ImageSlideshow('.image-slideshow');
+});
+
 // Add CSS for error states and notifications
 const additionalStyles = document.createElement('style');
 additionalStyles.textContent = `

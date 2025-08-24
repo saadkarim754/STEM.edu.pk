@@ -632,6 +632,37 @@ body {
     z-index: 10;
 }
 
+.image-slideshow {
+    position: relative;
+    width: 540px;
+    height: 400px;
+    overflow: hidden;
+    perspective: 1000px; /* Enable 3D space */
+    transform-style: preserve-3d;
+}
+
+.slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 1;
+    transform: rotateY(90deg); /* Start rotated away */
+    transition: transform 2.5s ease-in-out;
+    box-shadow: none;
+    backface-visibility: hidden; /* Hide back face during rotation */
+}
+
+.slide-image.active {
+    transform: rotateY(0deg); /* Face forward */
+}
+
+.slide-image.slide-out {
+    transform: rotateY(-90deg); /* Rotate away to other side */
+}
+
 .bottom-right-image img {
     max-width: 540px;
     height: auto;
