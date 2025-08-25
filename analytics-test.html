@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Test - STEM Careers Programme</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .test-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .test-button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .status.success { background: #4CAF50; color: white; }
+        .status.error { background: #f44336; color: white; }
+        .status.pending { background: #ff9800; color: white; }
+        
+        #console {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+        
+        .home-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .home-link a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .home-link a:hover {
+            background: white;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Analytics Test Page</h1>
+        <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+            Test your Firebase & Google Analytics integration
+        </p>
+        
+        <div class="test-section">
+            <h3>🔄 System Status</h3>
+            <p>Analytics Initialized: <span id="analyticsStatus" class="status pending">CHECKING...</span></p>
+            <p>Firebase Connected: <span id="firebaseStatus" class="status pending">CHECKING...</span></p>
+            <p>Google Analytics: <span id="gaStatus" class="status pending">CHECKING...</span></p>
+        </div>
+        
+        <div class="test-section">
+            <h3>🎯 Test Event Tracking</h3>
+            <p>Click these buttons to test different analytics events:</p>
+            
+            <button class="test-button" onclick="testProgramInterest()">
+                Test Program Interest
+            </button>
+            
+            <button class="test-button" onclick="testContactFormSubmission()">
+                Test Contact Form
+            </button>
+            
+            <button class="test-button" onclick="testFileDownload()">
+                Test File Download
+            </button>
+            
+            <button class="test-button" onclick="testExternalLink()">
+                Test External Link
+            </button>
+            
+            <button class="test-button" onclick="clearConsole()">
+                Clear Console
+            </button>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 Real-time Event Log</h3>
+            <div id="console">Initializing analytics test suite...\n</div>
+        </div>
+        
+        <div class="test-section">
+            <h3>✅ Verification Steps</h3>
+            <ol>
+                <li>Check that all system status indicators show "CONNECTED"</li>
+                <li>Click the test buttons and watch the console log</li>
+                <li>Open browser DevTools (F12) and check for any errors</li>
+                <li>Visit <a href="https://analytics.google.com/" target="_blank">GA4 Real-time Reports</a> to see live data</li>
+                <li>Check <a href="https://console.firebase.google.com/" target="_blank">Firebase Console</a> Firestore for events</li>
+            </ol>
+        </div>
+        
+        <div class="home-link">
+            <a href="index.html">← Back to STEM Careers Homepage</a>
+        </div>
+    </div>
+
+    <!-- Include Firebase Config -->
+    <script>
+        // Firebase Configuration (Production Ready)
+        const firebaseConfig = {
+            apiKey: "AIzaSyAzMYEJYKtbMbjWcByRth2QUyLjVqLOHto",
+            authDomain: "stem-careers-pakistan.firebaseapp.com",
+            projectId: "stem-careers-pakistan",
+            storageBucket: "stem-careers-pakistan.firebasestorage.app",
+            messagingSenderId: "18421361173",
+            appId: "1:18421361173:web:ff50dc39894a9f5099fc1c",
+            measurementId: "G-C8Y8SWVKRR"
+        };
+        
+        // Make config available globally
+        window.firebaseConfig = firebaseConfig;
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8Y8SWVKRR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C8Y8SWVKRR');
+    </script>
+
+    <!-- Analytics System -->
+    <script src="analytics.js"></script>
+    
+    <!-- Test Suite -->
+    <script>
+        let consoleElement = document.getElementById('console');
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            consoleElement.textContent += `[${timestamp}] ${prefix} ${message}\n`;
+            consoleElement.scrollTop = consoleElement.scrollHeight;
+        }
+        
+        function clearConsole() {
+            consoleElement.textContent = '';
+            log('Console cleared');
+        }
+        
+        // Check system status
+        function checkSystemStatus() {
+            log('Checking system status...');
+            
+            setTimeout(() => {
+                // Check Analytics
+                const analyticsConnected = window.stemAnalytics && window.stemAnalytics.initialized;
+                updateStatus('analyticsStatus', analyticsConnected);
+                log(`Analytics: ${analyticsConnected ? 'CONNECTED' : 'FAILED'}`, analyticsConnected ? 'success' : 'error');
+                
+                // Check Firebase
+                const firebaseConnected = window.firebase && window.firebase.db;
+                updateStatus('firebaseStatus', firebaseConnected);
+                log(`Firebase: ${firebaseConnected ? 'CONNECTED' : 'FAILED'}`, firebaseConnected ? 'success' : 'error');
+                
+                // Check GA
+                const gaConnected = typeof gtag !== 'undefined';
+                updateStatus('gaStatus', gaConnected);
+                log(`Google Analytics: ${gaConnected ? 'CONNECTED' : 'FAILED'}`, gaConnected ? 'success' : 'error');
+                
+                if (analyticsConnected && firebaseConnected && gaConnected) {
+                    log('🎉 All systems operational! Ready for testing.', 'success');
+                } else {
+                    log('⚠️ Some systems not connected. Check Firebase configuration.', 'error');
+                }
+            }, 2000);
+        }
+        
+        function updateStatus(elementId, connected) {
+            const element = document.getElementById(elementId);
+            element.textContent = connected ? 'CONNECTED' : 'FAILED';
+            element.className = `status ${connected ? 'success' : 'error'}`;
+        }
+        
+        // Test functions
+        function testProgramInterest() {
+            log('Testing program interest tracking...');
+            if (window.trackProgramInterest) {
+                window.trackProgramInterest('Test Program', 'test_click');
+                log('Program interest event fired: Test Program', 'success');
+            } else {
+                log('trackProgramInterest function not available', 'error');
+            }
+        }
+        
+        function testContactFormSubmission() {
+            log('Testing contact form submission...');
+            if (window.stemAnalytics) {
+                const testData = {
+                    name: 'Test User',
+                    email: 'test@example.com',
+                    subject: 'Analytics Test',
+                    message: 'This is a test submission'
+                };
+                window.stemAnalytics.trackContactSubmission(testData);
+                log('Contact form submission tracked', 'success');
+            } else {
+                log('stemAnalytics not available', 'error');
+            }
+        }
+        
+        function testFileDownload() {
+            log('Testing file download tracking...');
+            if (window.trackDownload) {
+                window.trackDownload('test-document.pdf', 'Test Program');
+                log('File download event fired: test-document.pdf', 'success');
+            } else {
+                log('trackDownload function not available', 'error');
+            }
+        }
+        
+        function testExternalLink() {
+            log('Testing external link tracking...');
+            if (window.stemAnalytics) {
+                window.stemAnalytics.trackExternalLink('https://example.com');
+                log('External link event fired: https://example.com', 'success');
+            } else {
+                log('stemAnalytics not available', 'error');
+            }
+        }
+        
+        // Initialize tests when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            log('Analytics test suite initialized');
+            checkSystemStatus();
+        });
+        
+        // Override console methods to capture logs
+        const originalConsole = {
+            log: console.log,
+            error: console.error,
+            warn: console.warn
+        };
+        
+        console.log = function(...args) {
+            originalConsole.log.apply(console, args);
+            if (args[0] && typeof args[0] === 'string' && args[0].includes('STEM Analytics')) {
+                log(args[0]);
+            }
+        };
+        
+        console.error = function(...args) {
+            originalConsole.error.apply(console, args);
+            log(args.join(' '), 'error');
+        };
+    </script>
+</body>
+</html>

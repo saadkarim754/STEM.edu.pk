@@ -8,6 +8,32 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stem-initiatives.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8Y8SWVKRR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C8Y8SWVKRR');
+    </script>
+    
+    <!-- Firebase Configuration -->
+    <script type="module">
+        // Firebase configuration - Production Ready
+        const firebaseConfig = {
+            apiKey: "AIzaSyAzMYEJYKtbMbjWcByRth2QUyLjVqLOHto",
+            authDomain: "stem-careers-pakistan.firebaseapp.com",
+            projectId: "stem-careers-pakistan",
+            storageBucket: "stem-careers-pakistan.firebasestorage.app",
+            messagingSenderId: "18421361173",
+            appId: "1:18421361173:web:ff50dc39894a9f5099fc1c",
+            measurementId: "G-C8Y8SWVKRR"
+        };
+        
+        // Store config globally for use in other scripts
+        window.firebaseConfig = firebaseConfig;
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -539,5 +565,6 @@
 
     <script src="script.js"></script>
     <script src="stem-initiatives.js"></script>
+    <script src="analytics.js"></script>
 </body>
 </html>
