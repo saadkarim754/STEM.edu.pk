@@ -1038,85 +1038,38 @@ window.addEventListener('unhandledrejection', (event) => {
 // Initialize the website
 const stemWebsite = new STEMWebsite();
 
-// Image Slideshow Functionality
-class ImageSlideshow {
-    constructor(containerSelector) {
-        this.container = document.querySelector(containerSelector);
-        if (!this.container) {
-            console.log('Slideshow container not found!');
-            return;
-        }
-        
-        this.images = this.container.querySelectorAll('.slide-image');
-        this.currentIndex = 0;
-        this.intervalTime = 6000; // 6 seconds for 2.5s rotation + display time
-        this.interval = null;
-        
-        console.log('Slideshow initialized with', this.images.length, 'images');
-        this.init();
-    }
-
-    init() {
-        if (this.images.length > 0) {
-            // Show first image
-            this.images[0].classList.add('active');
-            console.log('First image activated');
-            
-            if (this.images.length > 1) {
-                this.startSlideshow();
-                console.log('Slideshow started');
-            }
-        }
-    }
-
-    showImage(index) {
-        console.log('Rotating to image', index + 1);
-        
-        // Current image rotates out
-        const currentImage = this.images[this.currentIndex];
-        currentImage.classList.remove('active');
-        currentImage.classList.add('slide-out');
-        
-        // Next image rotates in after a small delay for smoother effect
-        setTimeout(() => {
-            this.images[index].classList.remove('slide-out');
-            this.images[index].classList.add('active');
-            this.currentIndex = index;
-        }, 50);
-        
-        // Clean up after full rotation
-        setTimeout(() => {
-            this.images.forEach((img, i) => {
-                if (i !== this.currentIndex) {
-                    img.classList.remove('active', 'slide-out');
-                }
-            });
-        }, 2600); // After 2.5s transition + buffer
-    }
-
-    nextImage() {
-        const nextIndex = (this.currentIndex + 1) % this.images.length;
-        this.showImage(nextIndex);
-    }
-
-    startSlideshow() {
-        this.interval = setInterval(() => {
-            this.nextImage();
-        }, this.intervalTime);
-    }
-
-    stopSlideshow() {
-        if (this.interval) {
-            clearInterval(this.interval);
-            this.interval = null;
-        }
-    }
-}
-
-// Initialize slideshow when DOM is loaded
+// Simple Image Slideshow - Clean Implementation
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing slideshow...');
-    const slideshow = new ImageSlideshow('.image-slideshow');
+    
+    const slideshow = document.querySelector('.image-slideshow');
+    if (slideshow) {
+        const images = slideshow.querySelectorAll('.slide-image');
+        let currentImageIndex = 0;
+        
+        console.log('Found', images.length, 'images for slideshow');
+        
+        // Show first image immediately
+        if (images.length > 0) {
+            images[0].classList.add('active');
+        }
+        
+        // Only start slideshow if there are multiple images
+        if (images.length > 1) {
+            setInterval(() => {
+                // Hide current image
+                images[currentImageIndex].classList.remove('active');
+                
+                // Move to next image (loop back to 0 after last image)
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                
+                // Show next image
+                images[currentImageIndex].classList.add('active');
+                
+                console.log('Switched to image', currentImageIndex + 1);
+            }, 2500); // Change every 2.5 seconds (1.5s display + 0.8s transition + 0.2s buffer)
+        }
+    }
 });
 
 // Add CSS for error states and notifications

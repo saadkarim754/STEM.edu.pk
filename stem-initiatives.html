@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEM Initiatives - HEC Pakistan</title>
-    <meta name="description" content="Explore various STEM initiatives by Higher Education Commission (HEC) Pakistan to promote science, technology, engineering, and mathematics education.">
+    <title>STEM Initiatives - STEM Careers Programme Pakistan</title>
+    <meta name="description" content="Explore our comprehensive STEM initiatives including NSTC, NERC, DBFC and various talent contests designed to inspire Pakistan's youth.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stem-initiatives.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Color Theme Toggle -->
-    <div class="color-theme-toggle" id="colorToggle">
-        <div class="color-options">
-            <div class="color-option" data-theme="purple-green" title="Purple & Green"></div>
-            <div class="color-option" data-theme="blue-purple" title="Blue & Purple"></div>
-            <div class="color-option" data-theme="teal-orange" title="Teal & Orange"></div>
-            <div class="color-option" data-theme="pink-blue" title="Pink & Blue"></div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="https://stem.edu.pk/wp-content/uploads/2023/05/stemlogo.png" alt="STEM Logo" class="logo-img">
-                <span class="logo-text">STEM</span>
+                <a href="index.html" class="logo-link">
+                    <img src="logos/stemlogo.png" alt="STEM Logo" class="logo-img">
+                </a>
             </div>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="index.html#programs" class="nav-link">Programs</a>
-                <a href="#initiatives" class="nav-link">Initiatives</a>
+                <a href="index.html#olympiads" class="nav-link">Olympiads</a>
+                <a href="index.html#process" class="nav-link">Selection Process</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+                <a href="index.html#partners" class="nav-link">Partners</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </div>
-            <div class="mobile-menu-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-right">
+                <div class="theme-toggle">
+                    <button class="icon-btn" id="themeBtn" title="Toggle light/dark" aria-label="Toggle light or dark theme">🌗</button>
+                </div>
+                <div class="mobile-menu-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,276 +46,261 @@
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="index.html#about" class="mobile-nav-link">About</a>
         <a href="index.html#programs" class="mobile-nav-link">Programs</a>
-        <a href="#initiatives" class="mobile-nav-link">Initiatives</a>
+        <a href="index.html#olympiads" class="mobile-nav-link">Olympiads</a>
+        <a href="index.html#process" class="mobile-nav-link">Selection Process</a>
+        <a href="index.html#faq" class="mobile-nav-link">FAQ</a>
+        <a href="index.html#partners" class="mobile-nav-link">Partners</a>
         <a href="index.html#contact" class="mobile-nav-link">Contact</a>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero initiatives-hero">
-        <div class="hero-content">
-            <div class="hero-text">
+    <section class="initiatives-hero">
+        <div class="container">
+            <div class="hero-content">
                 <h1 class="hero-title">
-                    HEC <span class="highlight">STEM</span> Initiatives
+                    <span class="highlight">STEM</span> Initiatives
                 </h1>
                 <p class="hero-subtitle">
-                    Comprehensive programs and initiatives by the Higher Education Commission 
-                    to strengthen STEM education across Pakistan
+                    Comprehensive programs and competitions designed to inspire and nurture Pakistan's future scientists, engineers, and innovators
                 </p>
-                <div class="hero-buttons">
-                    <a href="#initiatives" class="btn btn-primary">Explore Initiatives</a>
-                    <a href="index.html" class="btn btn-secondary">Back to Home</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-elements">
-                    <div class="float-element element-1">🎓</div>
-                    <div class="float-element element-2">🔬</div>
-                    <div class="float-element element-3">💻</div>
-                    <div class="float-element element-4">⚡</div>
-                    <div class="float-element element-5">🚀</div>
-                    <div class="float-element element-6">🧪</div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Active Programs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Students Annually</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Subject Areas</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
-    <section id="initiatives" class="initiatives">
+    <!-- National Science Talent Contest Section -->
+    <section class="initiatives-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">STEM Education Initiatives</h2>
-                <p class="section-subtitle">Building Pakistan's future through innovative STEM programs</p>
+                <h2 class="section-title">National Science Talent Contest (NSTC)</h2>
+                <p class="section-subtitle">Preparing Pakistan's brightest minds for international olympiads</p>
             </div>
-
-            <!-- Digital Skills Initiatives -->
-            <div class="initiative-category">
-                <h3 class="category-title">Digital Skills & Technology</h3>
-                <div class="initiative-grid">
-                    <div class="initiative-card featured">
-                        <div class="initiative-icon">💻</div>
-                        <h4>Digital Pakistan Initiative</h4>
-                        <p>Comprehensive program to enhance digital literacy and skills across all educational levels, preparing students for the digital economy.</p>
-                        <div class="initiative-features">
-                            <span class="feature">Coding Bootcamps</span>
-                            <span class="feature">AI/ML Training</span>
-                            <span class="feature">Cybersecurity Courses</span>
+            <div class="initiatives-grid">
+                <!-- NPTC Card -->
+                <div class="initiative-card" data-initiative="nptc">
+                    <div class="card-content">
+                        <div class="card-icon">⚛️</div>
+                        <h3 class="card-title">NPTC</h3>
+                        <h4 class="card-subtitle">National Physics Talent Contest</h4>
+                        <p class="card-description">Annual physics olympiad preparation program running since 1995, conducted in five comprehensive stages.</p>
+                        <div class="card-tags">
+                            <span class="tag">Physics</span>
+                            <span class="tag">5 Stages</span>
+                            <span class="tag">Since 1995</span>
                         </div>
                     </div>
-                    
-                    <div class="initiative-card">
-                        <div class="initiative-icon">🤖</div>
-                        <h4>AI & Robotics Labs</h4>
-                        <p>State-of-the-art laboratories equipped with advanced AI and robotics technology for hands-on learning experiences.</p>
-                        <div class="initiative-features">
-                            <span class="feature">50+ Universities</span>
-                            <span class="feature">Research Projects</span>
-                            <span class="feature">Industry Partnerships</span>
+                    <div class="card-expanded">
+                        <div class="expanded-image">
+                            <div class="image-placeholder">🔬</div>
                         </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">📱</div>
-                        <h4>Mobile App Development</h4>
-                        <p>Training programs focused on mobile application development using modern frameworks and technologies.</p>
-                        <div class="initiative-features">
-                            <span class="feature">Flutter/React Native</span>
-                            <span class="feature">UI/UX Design</span>
-                            <span class="feature">App Store Publishing</span>
+                        <div class="expanded-content">
+                            <h3>National Physics Talent Contest</h3>
+                            <div class="program-details">
+                                <h4>Program Overview</h4>
+                                <p>The National Physics Talent Contest (NPTC) inspires Pakistani students for participation in the International Physics Olympiad. This regular annual event has been running since 1995 and is conducted in five comprehensive stages.</p>
+                                
+                                <h4>Contest Stages</h4>
+                                <ul>
+                                    <li><strong>Stage 1:</strong> 1000+ educational institutions nominate best students (75%+ marks in physics/math)</li>
+                                    <li><strong>Stage 2:</strong> Screening test in major cities, top 50 students selected</li>
+                                    <li><strong>Stage 3:</strong> Week-long intensive training camp at PIEAS (August)</li>
+                                    <li><strong>Stage 4:</strong> Second camp in December for shortlisted students</li>
+                                    <li><strong>Stage 5:</strong> Final camp to select 5-member Pakistani team</li>
+                                </ul>
+                                
+                                <h4>Training Features</h4>
+                                <ul>
+                                    <li>Theory coaching in mornings, experiments in afternoons</li>
+                                    <li>Visits to experimental facilities in Nilore Complex</li>
+                                    <li>Evening meetings with renowned scientists</li>
+                                    <li>Daily themes named after famous scientists (Alberuni, Galileo, Newton)</li>
+                                    <li>Standard physics textbook prizes for all participants</li>
+                                </ul>
+                                
+                                <h4>Rewards & Recognition</h4>
+                                <ul>
+                                    <li>Merit certificates for top performers</li>
+                                    <li>Cash prizes worth PKR 20,000 each for top 5 students</li>
+                                    <li>NPTC Alumni membership with quarterly newsletter</li>
+                                    <li>Additional week of coaching before International Olympiad</li>
+                                </ul>
+                                
+                                <div class="apply-section">
+                                    <button class="btn btn-primary apply-btn">Apply Now</button>
+                                    <p class="apply-note">Home Institution: PIEAS</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Research & Innovation -->
-            <div class="initiative-category">
-                <h3 class="category-title">Research & Innovation</h3>
-                <div class="initiative-grid">
-                    <div class="initiative-card featured">
-                        <div class="initiative-icon">🔬</div>
-                        <h4>National Research Program</h4>
-                        <p>Funding and support for cutting-edge research in STEM fields, promoting innovation and scientific discovery.</p>
-                        <div class="initiative-features">
-                            <span class="feature">PKR 10B+ Funding</span>
-                            <span class="feature">500+ Projects</span>
-                            <span class="feature">International Collaboration</span>
+                <!-- NBTC Card -->
+                <div class="initiative-card" data-initiative="nbtc">
+                    <div class="card-content">
+                        <div class="card-icon">🧬</div>
+                        <h3 class="card-title">NBTC</h3>
+                        <h4 class="card-subtitle">National Biology Talent Contest</h4>
+                        <p class="card-description">Comprehensive biology olympiad preparation program under NSTC umbrella.</p>
+                        <div class="card-tags">
+                            <span class="tag">Biology</span>
+                            <span class="tag">NIBGE</span>
+                            <span class="tag">International Prep</span>
                         </div>
                     </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">💡</div>
-                        <h4>Innovation Hubs</h4>
-                        <p>Establishment of innovation hubs in major universities to foster entrepreneurship and technology transfer.</p>
-                        <div class="initiative-features">
-                            <span class="feature">25+ Hubs</span>
-                            <span class="feature">Startup Incubation</span>
-                            <span class="feature">Mentorship Programs</span>
+                    <div class="card-expanded">
+                        <div class="expanded-image">
+                            <div class="image-placeholder">🔬</div>
                         </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">🧬</div>
-                        <h4>Biotechnology Research</h4>
-                        <p>Advanced research initiatives in biotechnology, genetics, and biomedical engineering for healthcare solutions.</p>
-                        <div class="initiative-features">
-                            <span class="feature">Gene Therapy</span>
-                            <span class="feature">Drug Discovery</span>
-                            <span class="feature">Medical Devices</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Infrastructure Development -->
-            <div class="initiative-category">
-                <h3 class="category-title">Infrastructure & Facilities</h3>
-                <div class="initiative-grid">
-                    <div class="initiative-card featured">
-                        <div class="initiative-icon">🏢</div>
-                        <h4>STEM Centers of Excellence</h4>
-                        <p>World-class facilities and equipment for advanced STEM education and research across the country.</p>
-                        <div class="initiative-features">
-                            <span class="feature">15+ Centers</span>
-                            <span class="feature">Modern Equipment</span>
-                            <span class="feature">International Standards</span>
-                        </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">🌐</div>
-                        <h4>High-Speed Internet</h4>
-                        <p>Connecting all educational institutions with high-speed internet to enable digital learning and research.</p>
-                        <div class="initiative-features">
-                            <span class="feature">Fiber Optic Network</span>
-                            <span class="feature">1000+ Institutions</span>
-                            <span class="feature">24/7 Connectivity</span>
-                        </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">⚡</div>
-                        <h4>Smart Campus Initiative</h4>
-                        <p>Converting traditional campuses into smart, sustainable, and technology-enabled learning environments.</p>
-                        <div class="initiative-features">
-                            <span class="feature">IoT Integration</span>
-                            <span class="feature">Energy Efficiency</span>
-                            <span class="feature">Smart Classrooms</span>
+                        <div class="expanded-content">
+                            <h3>National Biology Talent Contest</h3>
+                            <div class="program-details">
+                                <h4>Program Overview</h4>
+                                <p>National Biology Talent Contest (NBTC) is one of the contests of National Science Talent Contest (NSTC) functioning under the umbrella of STEM Careers Project, HEC.</p>
+                                
+                                <h4>Home Institution</h4>
+                                <p>National Institute of Biotechnology and Genetic Engineering (NIBGE) serves as the Home Institution for Training/Selection Camps for National Biology Talent Contest.</p>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Comprehensive biology olympiad preparation</li>
+                                    <li>Training camps at NIBGE facilities</li>
+                                    <li>International Biology Olympiad preparation</li>
+                                    <li>Expert faculty guidance</li>
+                                    <li>Hands-on laboratory experience</li>
+                                </ul>
+                                
+                                <h4>Training Components</h4>
+                                <ul>
+                                    <li>Theoretical knowledge enhancement</li>
+                                    <li>Practical laboratory sessions</li>
+                                    <li>Problem-solving techniques</li>
+                                    <li>International standard preparation</li>
+                                </ul>
+                                
+                                <div class="apply-section">
+                                    <button class="btn btn-primary apply-btn">Apply Now</button>
+                                    <p class="apply-note">Home Institution: NIBGE</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Scholarships & Support -->
-            <div class="initiative-category">
-                <h3 class="category-title">Scholarships & Financial Support</h3>
-                <div class="initiative-grid">
-                    <div class="initiative-card featured">
-                        <div class="initiative-icon">🎓</div>
-                        <h4>HEC STEM Scholarships</h4>
-                        <p>Comprehensive scholarship programs for deserving students to pursue higher education in STEM fields.</p>
-                        <div class="initiative-features">
-                            <span class="feature">10,000+ Scholarships</span>
-                            <span class="feature">Merit-Based</span>
-                            <span class="feature">International Study</span>
+                <!-- NCTC Card -->
+                <div class="initiative-card" data-initiative="nctc">
+                    <div class="card-content">
+                        <div class="card-icon">🧪</div>
+                        <h3 class="card-title">NCTC</h3>
+                        <h4 class="card-subtitle">National Chemistry Talent Contest</h4>
+                        <p class="card-description">Chemistry olympiad preparation program hosted by H.E.J. Research Institute.</p>
+                        <div class="card-tags">
+                            <span class="tag">Chemistry</span>
+                            <span class="tag">H.E.J.</span>
+                            <span class="tag">Research</span>
                         </div>
                     </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">👥</div>
-                        <h4>Faculty Development</h4>
-                        <p>Training and development programs for faculty members to enhance their teaching and research capabilities.</p>
-                        <div class="initiative-features">
-                            <span class="feature">PhD Support</span>
-                            <span class="feature">Research Training</span>
-                            <span class="feature">International Exchange</span>
+                    <div class="card-expanded">
+                        <div class="expanded-image">
+                            <div class="image-placeholder">⚗️</div>
                         </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">🌟</div>
-                        <h4>Women in STEM</h4>
-                        <p>Special initiatives to encourage and support women's participation in science, technology, engineering, and mathematics.</p>
-                        <div class="initiative-features">
-                            <span class="feature">50% Women Quota</span>
-                            <span class="feature">Mentorship</span>
-                            <span class="feature">Leadership Programs</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Industry Partnerships -->
-            <div class="initiative-category">
-                <h3 class="category-title">Industry Collaboration</h3>
-                <div class="initiative-grid">
-                    <div class="initiative-card featured">
-                        <div class="initiative-icon">🤝</div>
-                        <h4>Industry-Academia Partnership</h4>
-                        <p>Bridging the gap between academic institutions and industry through collaborative programs and internships.</p>
-                        <div class="initiative-features">
-                            <span class="feature">200+ Companies</span>
-                            <span class="feature">Internship Programs</span>
-                            <span class="feature">Joint Research</span>
-                        </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">🏭</div>
-                        <h4>Technology Transfer</h4>
-                        <p>Facilitating the transfer of innovative technologies from universities to industry for commercialization.</p>
-                        <div class="initiative-features">
-                            <span class="feature">Patent Support</span>
-                            <span class="feature">Licensing</span>
-                            <span class="feature">Startup Support</span>
-                        </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">💼</div>
-                        <h4>Skills Certification</h4>
-                        <p>Industry-recognized certification programs to ensure graduates have the skills demanded by employers.</p>
-                        <div class="initiative-features">
-                            <span class="feature">Professional Certs</span>
-                            <span class="feature">Skills Assessment</span>
-                            <span class="feature">Job Placement</span>
+                        <div class="expanded-content">
+                            <h3>National Chemistry Talent Contest</h3>
+                            <div class="program-details">
+                                <h4>Program Overview</h4>
+                                <p>National Chemistry Talent Contest (NCTC) is one of the contests of National Science Talent Contest (NSTC) functioning under the umbrella of STEM Careers Project, HEC.</p>
+                                
+                                <h4>Home Institution</h4>
+                                <p>H.E.J. Research Institute of Chemistry, International Center for Chemical Sciences serves as the Home Institution for Training/Selection Camps.</p>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>International Chemistry Olympiad preparation</li>
+                                    <li>Research-oriented training approach</li>
+                                    <li>World-class laboratory facilities</li>
+                                    <li>Expert research faculty</li>
+                                    <li>Comprehensive theoretical and practical training</li>
+                                </ul>
+                                
+                                <h4>Training Components</h4>
+                                <ul>
+                                    <li>Advanced theoretical chemistry</li>
+                                    <li>Experimental chemistry techniques</li>
+                                    <li>Analytical and synthetic chemistry</li>
+                                    <li>Problem-solving methodologies</li>
+                                    <li>International competition preparation</li>
+                                </ul>
+                                
+                                <div class="apply-section">
+                                    <button class="btn btn-primary apply-btn">Apply Now</button>
+                                    <p class="apply-note">Home Institution: H.E.J. Research Institute</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- International Cooperation -->
-            <div class="initiative-category">
-                <h3 class="category-title">International Cooperation</h3>
-                <div class="initiative-grid">
-                    <div class="initiative-card featured">
-                        <div class="initiative-icon">🌍</div>
-                        <h4>Global STEM Partnerships</h4>
-                        <p>Collaborative agreements with leading international institutions for knowledge exchange and joint programs.</p>
-                        <div class="initiative-features">
-                            <span class="feature">50+ Countries</span>
-                            <span class="feature">Student Exchange</span>
-                            <span class="feature">Joint Degrees</span>
+                <!-- NMTC Card -->
+                <div class="initiative-card" data-initiative="nmtc">
+                    <div class="card-content">
+                        <div class="card-icon">🧮</div>
+                        <h3 class="card-title">NMTC</h3>
+                        <h4 class="card-subtitle">National Mathematics Talent Contest</h4>
+                        <p class="card-description">Mathematics olympiad preparation program hosted by CIIT, Lahore.</p>
+                        <div class="card-tags">
+                            <span class="tag">Mathematics</span>
+                            <span class="tag">CIIT</span>
+                            <span class="tag">Problem Solving</span>
                         </div>
                     </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">🏆</div>
-                        <h4>International Competitions</h4>
-                        <p>Supporting Pakistani students in international STEM competitions and olympiads to showcase national talent.</p>
-                        <div class="initiative-features">
-                            <span class="feature">Science Olympiads</span>
-                            <span class="feature">Hackathons</span>
-                            <span class="feature">Innovation Contests</span>
+                    <div class="card-expanded">
+                        <div class="expanded-image">
+                            <div class="image-placeholder">📐</div>
                         </div>
-                    </div>
-
-                    <div class="initiative-card">
-                        <div class="initiative-icon">📚</div>
-                        <h4>Curriculum Harmonization</h4>
-                        <p>Aligning Pakistani STEM curricula with international standards to ensure global competitiveness.</p>
-                        <div class="initiative-features">
-                            <span class="feature">International Standards</span>
-                            <span class="feature">Quality Assurance</span>
-                            <span class="feature">Global Recognition</span>
+                        <div class="expanded-content">
+                            <h3>National Mathematics Talent Contest</h3>
+                            <div class="program-details">
+                                <h4>Program Overview</h4>
+                                <p>National Mathematics Talent Contest (NMTC) is one of the contests of National Science Talent Contest (NSTC) functioning under the umbrella of STEM Careers Programme, HEC.</p>
+                                
+                                <h4>Home Institution</h4>
+                                <p>CIIT, Lahore serves as the Home Institution for Training/Selection Camps for National Mathematics Talent Contest.</p>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>International Mathematics Olympiad preparation</li>
+                                    <li>Advanced problem-solving techniques</li>
+                                    <li>Expert mathematics faculty</li>
+                                    <li>Comprehensive training methodology</li>
+                                    <li>Competitive environment</li>
+                                </ul>
+                                
+                                <h4>Training Components</h4>
+                                <ul>
+                                    <li>Advanced mathematical concepts</li>
+                                    <li>Olympiad-style problem solving</li>
+                                    <li>Mathematical reasoning and proof techniques</li>
+                                    <li>Competition strategies</li>
+                                    <li>International standard preparation</li>
+                                </ul>
+                                
+                                <div class="apply-section">
+                                    <button class="btn btn-primary apply-btn">Apply Now</button>
+                                    <p class="apply-note">Home Institution: CIIT, Lahore</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -323,57 +308,190 @@
         </div>
     </section>
 
-    <!-- Impact Statistics -->
-    <section class="impact-stats">
+    <!-- National Engineering Competitions Section -->
+    <section class="initiatives-section engineering-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Impact & Achievements</h2>
-                <p class="section-subtitle">Measurable progress in STEM education and research</p>
+                <h2 class="section-title">National Engineering Competitions</h2>
+                <p class="section-subtitle">Encouraging innovation and practical engineering solutions</p>
             </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">🎓</div>
-                    <div class="stat-number">50,000+</div>
-                    <div class="stat-label">STEM Graduates</div>
+            <div class="initiatives-grid">
+                <!-- NERC Card -->
+                <div class="initiative-card" data-initiative="nerc">
+                    <div class="card-content">
+                        <div class="card-icon">🤖</div>
+                        <h3 class="card-title">NERC</h3>
+                        <h4 class="card-subtitle">National Engineering Robotics Contest</h4>
+                        <p class="card-description">Premier robotics competition promoting research and innovation in robotics.</p>
+                        <div class="card-tags">
+                            <span class="tag">Robotics</span>
+                            <span class="tag">NUST</span>
+                            <span class="tag">16th Edition</span>
+                        </div>
+                    </div>
+                    <div class="card-expanded">
+                        <div class="expanded-image">
+                            <div class="image-placeholder">🤖</div>
+                        </div>
+                        <div class="expanded-content">
+                            <h3>National Engineering Robotics Contest</h3>
+                            <div class="program-details">
+                                <h4>Program Overview</h4>
+                                <p>National Engineering Robotics Contest is a joint project of National University of Sciences and Technology, STEM Careers Programme and Pakistan Science Foundation, to promote research in robotics and its related fields in Pakistan.</p>
+                                
+                                <h4>Competition Features</h4>
+                                <ul>
+                                    <li>Integration and evaluation of mechanical and electronics designs</li>
+                                    <li>Control and path planning algorithms</li>
+                                    <li>Agent architectures development</li>
+                                    <li>Exciting new challenges every year</li>
+                                    <li>Nationwide participation from engineering students</li>
+                                </ul>
+                                
+                                <h4>Host Institution</h4>
+                                <p>Department of Mechatronics Engineering, CEME NUST welcomes participants to the annual NERC competition.</p>
+                                
+                                <h4>Growth & Impact</h4>
+                                <ul>
+                                    <li>Increasingly popular among students</li>
+                                    <li>Growing participation from university engineering departments</li>
+                                    <li>Advancement of robotics community at wider scale</li>
+                                    <li>Common environment for design evaluation</li>
+                                </ul>
+                                
+                                <div class="apply-section">
+                                    <button class="btn btn-primary apply-btn">Register Team</button>
+                                    <p class="apply-note">Host: NUST - Department of Mechatronics Engineering</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🔬</div>
-                    <div class="stat-number">1,200+</div>
-                    <div class="stat-label">Research Projects</div>
+
+                <!-- DBFC Card -->
+                <div class="initiative-card" data-initiative="dbfc">
+                    <div class="card-content">
+                        <div class="card-icon">✈️</div>
+                        <h3 class="card-title">DBFC</h3>
+                        <h4 class="card-subtitle">Design, Build & Fly Competition</h4>
+                        <p class="card-description">Aircraft design competition organized by GIK with specific technical constraints.</p>
+                        <div class="card-tags">
+                            <span class="tag">Aerospace</span>
+                            <span class="tag">GIK</span>
+                            <span class="tag">Design</span>
+                        </div>
+                    </div>
+                    <div class="card-expanded">
+                        <div class="expanded-image">
+                            <div class="image-placeholder">✈️</div>
+                        </div>
+                        <div class="expanded-content">
+                            <h3>Design, Build & Fly Competition</h3>
+                            <div class="program-details">
+                                <h4>Program Overview</h4>
+                                <p>DBFC is part of the National Engineering Competitions organized by GIK to groom youth by providing excellent opportunities for students and faculty from multiple disciplines to engage in creative activities.</p>
+                                
+                                <h4>Design Constraints</h4>
+                                <ul>
+                                    <li>Aircraft must be in Pusher Configuration (Single/Twin Booms pusher)</li>
+                                    <li>Wingspan: Maximum 2.5 meters</li>
+                                    <li>Weight: Maximum 3 Kg for all missions</li>
+                                    <li>Battery: LiPo max 2200 mAh, max 12V</li>
+                                    <li>Transmitters with telemetry capability required</li>
+                                </ul>
+                                
+                                <h4>Mission Requirements</h4>
+                                <ul>
+                                    <li>Ground rolling take-off and landing</li>
+                                    <li>Simulate take-off from small austere field</li>
+                                    <li>Must take off within 60 ft</li>
+                                    <li>Various mission scenarios</li>
+                                </ul>
+                                
+                                <h4>Objectives</h4>
+                                <ul>
+                                    <li>Encourage youth participation in aerospace</li>
+                                    <li>Hunt talent for international competitions</li>
+                                    <li>Multidisciplinary collaboration</li>
+                                    <li>Creative problem solving</li>
+                                </ul>
+                                
+                                <div class="apply-section">
+                                    <button class="btn btn-primary apply-btn">Register Team</button>
+                                    <p class="apply-note">Organized by: GIK Institute</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🏢</div>
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Partner Institutions</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">💰</div>
-                    <div class="stat-number">PKR 25B+</div>
-                    <div class="stat-label">Investment</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🌟</div>
-                    <div class="stat-number">30%</div>
-                    <div class="stat-label">Women Participation</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🌍</div>
-                    <div class="stat-number">40+</div>
-                    <div class="stat-label">Countries</div>
+
+                <!-- NEC Card -->
+                <div class="initiative-card" data-initiative="nec">
+                    <div class="card-content">
+                        <div class="card-icon">⚙️</div>
+                        <h3 class="card-title">NEC</h3>
+                        <h4 class="card-subtitle">National Engineering Competition</h4>
+                        <p class="card-description">Pilot program encouraging innovative solutions to national problems.</p>
+                        <div class="card-tags">
+                            <span class="tag">Innovation</span>
+                            <span class="tag">Teams</span>
+                            <span class="tag">Funding</span>
+                        </div>
+                    </div>
+                    <div class="card-expanded">
+                        <div class="expanded-image">
+                            <div class="image-placeholder">⚙️</div>
+                        </div>
+                        <div class="expanded-content">
+                            <h3>National Engineering Competition</h3>
+                            <div class="program-details">
+                                <h4>Program Overview</h4>
+                                <p>National Engineering Competition (NEC) is launched on pilot scale under STEM Careers Programme, encouraging undergraduate engineering students to develop innovative solutions to problems of national interest.</p>
+                                
+                                <h4>Competition Structure</h4>
+                                <ul>
+                                    <li>Annual themes regarding national problems</li>
+                                    <li>Interdisciplinary team participation</li>
+                                    <li>Supervision by faculty teachers</li>
+                                    <li>University-level and national-level competitions</li>
+                                </ul>
+                                
+                                <h4>Team Requirements</h4>
+                                <ul>
+                                    <li>3-4 students from different relevant departments</li>
+                                    <li>Open to all undergraduate engineering students</li>
+                                    <li>Fourth year students can use as senior project</li>
+                                    <li>Minimum 3 teams per participating university</li>
+                                </ul>
+                                
+                                <h4>Funding & Prizes</h4>
+                                <ul>
+                                    <li><strong>Project Funding:</strong> Up to PKR 10,000 per team</li>
+                                    <li><strong>University Level:</strong> PKR 10,000, 7,000, 5,000</li>
+                                    <li><strong>National Level:</strong> PKR 50,000, 30,000, 20,000</li>
+                                </ul>
+                                
+                                <div class="apply-section">
+                                    <button class="btn btn-primary apply-btn">Form Team</button>
+                                    <p class="apply-note">Pilot Program - STEM Careers Programme</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- Call to Action Section -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Join Pakistan's STEM Revolution?</h2>
-                <p>Be part of the innovative initiatives shaping Pakistan's technological future. Explore opportunities in education, research, and industry collaboration.</p>
+                <h2>Ready to Join Our STEM Community?</h2>
+                <p>Take the first step towards your STEM career and become part of Pakistan's brightest scientific minds.</p>
                 <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">Get Involved</a>
-                    <a href="index.html#programs" class="btn btn-secondary">View Programs</a>
+                    <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+                    <a href="index.html#faq" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         </div>
@@ -384,7 +502,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="https://stem.edu.pk/wp-content/uploads/2023/05/stemlogo.png" alt="STEM Logo" class="footer-logo">
+                    <img src="logos/stemlogo.png" alt="STEM Logo" class="footer-logo">
                     <h3>STEM CAREERS PROGRAMME</h3>
                     <p>Inspiring Pakistan's youth to excel in Science, Technology, Engineering, and Mathematics through world-class education and international competition opportunities.</p>
                 </div>
@@ -394,32 +512,32 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#about">About</a></li>
                         <li><a href="index.html#programs">Programs</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Initiatives</h4>
+                    <h4>STEM Initiatives</h4>
                     <ul>
-                        <li><a href="#initiatives">Digital Skills</a></li>
-                        <li><a href="#initiatives">Research Programs</a></li>
-                        <li><a href="#initiatives">Infrastructure</a></li>
-                        <li><a href="#initiatives">Scholarships</a></li>
+                        <li><a href="#initiatives">NSTC Programs</a></li>
+                        <li><a href="#initiatives">Engineering Competitions</a></li>
+                        <li><a href="index.html#olympiads">International Olympiads</a></li>
+                        <li><a href="stem-initiatives.html">All Initiatives</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p>📧 stem@hec.gov.pk</p>
                     <p>📱 +92-51-9040356</p>
-                    <p>📍 HEC Headquarters, Islamabad</p>
+                    <p>📍 PIEAS, Nilore, Islamabad</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Higher Education Commission. All rights reserved. | STEM Initiatives for Pakistan's Future</p>
+                <p>&copy; 2024 STEM Careers Programme. All rights reserved. | A joint venture of HEC & PIEAS</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="stem-initiatives.js"></script>
 </body>
 </html>

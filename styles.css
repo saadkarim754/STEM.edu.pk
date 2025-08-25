@@ -619,6 +619,19 @@ body {
     color: white;
 }
 
+.btn-accent {
+    background: var(--gradient-secondary);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-accent:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+}
+
 .hero-visual {
     position: relative;
     height: 500px;
@@ -629,38 +642,32 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    width: 500px;
+    height: 340px;
+    border-radius: 18px;
+    overflow: hidden;
+    /* Enhanced blurred edge effect */
+    box-shadow: 0 0 30px 18px rgba(0,0,0,0.35);
     z-index: 10;
 }
 
 .image-slideshow {
+    width: 100%;
+    height: 100%;
     position: relative;
-    width: 540px;
-    height: 400px;
-    overflow: hidden;
-    perspective: 1000px; /* Enable 3D space */
-    transform-style: preserve-3d;
 }
 
 .slide-image {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    opacity: 1;
-    transform: rotateY(90deg); /* Start rotated away */
-    transition: transform 2.5s ease-in-out;
-    box-shadow: none;
-    backface-visibility: hidden; /* Hide back face during rotation */
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
 }
 
 .slide-image.active {
-    transform: rotateY(0deg); /* Face forward */
-}
-
-.slide-image.slide-out {
-    transform: rotateY(-90deg); /* Rotate away to other side */
+    opacity: 1;
 }
 
 .bottom-right-image img {

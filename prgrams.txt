@@ -1,0 +1,84 @@
+About the NSTC
+NSTC, one of the two main activities of the STEM Career Project, is an extension of the National Physics Talent Contest launched by PAEC in 1995 on the directive of the then President, the Islamic Republic of Pakistan. NSTC is meant to inspire the youth of the Nation to opt for careers in science, and mathematics and to prepare them for participation in the International Olympiad in Biology, Chemistry, Mathematics, and Physics.
+
+Four leading education/research institutions of the country are home Institutes for different subjects of NSTC, where students are trained and tested, and further screened for the subsequent phases of the contest.
+
+About the NPTC
+The National Physics Talent Contest (NPTC), which was inspired by and is meant to prepare Pakistani Students for participation in the International Physics Olympiad, is a regular annual event since 1995. It is conducted in five stages. In the first stage about 1000 educational institutions throughout the country, which offer science education at intermediate or A-level, are invited to nominate their best students who have secured 75% or more marks in physics and mathematics in their metric or O-level examination for participation in the Contest.
+
+The second stage consists of a screening test that is held in major cities of the country on the basis of which the top 50 students are selected from among these and other students of similar academic standing, who apply against advertisements in the press.
+
+The third stage consists of a weeklong intensive training Camp, which is held at PIEAS during the end of August where students are coached and tested in theory in the mornings and in experiments in the afternoons. In between they are shown the experimental facilities in Nilore Complex and in the evenings they meet a renowned scientist or engineer, who is invited to share his/her research interests with them. Each day of the Camp is named after a renowned scientist such as Alberuni, Galileo and Newton, etc, whose contributions is the focus of discussions that day. A team of 12-15 students is selected for the next phase on the basis of their performance during the camp and the experimental and theoretical exam on the last day of the Camp, the Day of Judgment. All of the students participating in the Camp are awarded prizes in the form of a standard physics textbook, usually University Physics by H. D. Young and R. A. Freedman. These students also become Alumni of NPTC, which entitles them to receive the quarterly newsletter of the Contest.
+
+For the fourth phase of the Contest students, who are short listed during the 1st Camp, are invited to a second one-week Camp towards the end of December. The experimental and theoretical training during this Camp is much more focused. On the basis of their performance during the camp and a more formal test on the last day of the camp 7-8 students are selected for the next stage of the Contest.
+
+These 7-8 students are invited to PIEAS for another weeklong Camp for the fifth phase of the Contest, which is more or less identical to the previous Camp. The five-member Pakistani team for participation in the international Physics Olympiad and the winners of the Contest are selected at the end of this Camp. All of these five students are awarded merit certificates and the top five students are also awarded cash prizes worth 20,000 each . The team members are coached for another week before their departure for the Olympiad.
+
+The Chief Guest, who is normally the President or the Prime Minister, awards these prizes during the inaugural ceremony of the International Nathiagali Summer College of Physics and Contemporary Needs. President Pervez Musharraf awarded these prizes to the winner of the previous three Contests.
+
+
+
+
+
+
+National Biology Talent Contest (NBTC) is one of the contests of National Science Talent Contest (NSTC) which are functioning under the umbrella of Science, Engineering, Technology and Mathematics (STEM) Careers Project, HEC. National Institute of Biotechnology and Genetic Engineering (NIBGE) is the Home Institution (HI) for Training/Selection Camps for National Biology Talent Contest. For more details about the HI please visit their official website at https://www.nibge.org/
+
+
+
+
+
+
+
+
+
+About the NCTC
+National Chemistry Talent Contest (NCTC) is one of the contests of National Science Talent Contest (NSTC) which are functioning under the umbrella of Science, Engineering, Technology and Mathematics (STEM) Careers Project, HEC. H.E.J. Research Institute of Chemistry, International Center for Chemical Sciences is the Home Institution (HI) for Training/Selection Camps for National Chemistry Talent Contest. For more details about the HI please visit their official website at https://www.iccs.edu
+
+
+About the NMTC
+National Mathematics Talent Contest (NMTC) is one of the contests of National Science Talent Contest (NSTC) which are functioning under the umbrella of Science, Engineering, Technology and Mathematics (STEM) Careers Programme, HEC. CIIT, Lahore is the Home Institution (HI) for Training/Selection Camps for National Mathematics Talent Contest. For more details about the Home Institute (HI) please visit their official website at https://lahore.comsats.edu.pk/math/
+
+
+
+About the NEC
+National Engineering Competition (NEC) is being launched on a pilot scale this year under the umbrella of Science, Technology, Engineering and Mathematics (STEM) Careers Programme, a joint venture of PIEAS and HEC. Some other activities that are being carried out under this programme are National Science Contests in Biology, Chemistry, Mathematics and Physics. These Contests, an extension of the National Physics Talent Contest that was initiated by PAEC in 1995 under the directive of the then President, Islamic Republic of Pakistan, are meant to groom the youth for the nation for participation in International Olympiad in these fields.
+
+The main idea behind the NEC is to encourage undergraduate engineering students public in as well as private sector engineering institutions to come up with innovative solutions to problems of national interest. For this purposes a theme regarding such a problem would be circulated each year on which an interdisciplinary team of students could work under the supervision of their teachers. In addition to fourth year students, who could work on such problems in lieu of their senior year project, any undergraduate engineering student could participate in this Competition.
+
+STEM Career Programme could provide modest funding not exceeding 10,000 rupees per team to facilitate work on this project. Each team should preferably consist of 3-4 students belonging to different departments that are relevant to the theme of the project. It would be highly desirable if each participating university/institute can assign the project to at least three teams. These teams will first compete amongst each other and the winning team from each university shall compete against winning teams from other universities at the national level. Amount of prizes for the top three projects for university level competition is 10,000 rupees, 7000 rupees and 5000 rupees.
+
+For the national level competition the corresponding amount is 50, 000 rupees, 30,000 rupees and 20,000 rupees respectively.
+
+National Engineering Robotic Competition
+
+Design Build and Fly Competition
+
+
+
+
+
+
+
+
+
+About the NERC
+National Engineering Robotics Contest is a joint project of National University of Sciences and Technology, STEM Careers Programme and Pakistan Science Foundation, to promote research in robotics and its related fields in Pakistan. We, from the Department of Mechatronics Engineering, CEME NUST, welcome you all to participate in 16th National Engineering Robotics Contest (NERC 2018).
+
+This competition will provide a common environment for the integration and evaluation of various mechanical and electronics designs, control and path planning algorithms and agent architectures. Over the years, NERC has grown increasingly popular among students and also among university engineering departments across the country. Engineering students from all over Pakistan participate in this competition. We indeed value the interest that our participants have shown and pledge to bring exciting new challenges every year for the advancement of robotics community at an increasingly wider scale.
+
+
+
+
+
+About the DBFC
+DBFC is part of the National Engineering Competitions of the STEM organized by GIK to groom the youth by providing an excellent opportunity to the students and faculty from multiples disciplines to involve in the creative activities involved in Design, Build and Fly in collaboration with professionals involved in flying. The aim of such competition is to encourage the youth and to hunt the talent to ultimately take them to international level competitions in the years to come.
+
+Design Constraints
+The aircraft should be designed in Pusher Configuration, like a Single or Twin Booms pusher or any other pusher configuration.
+The wingspan of the aircraft should not be more than 2.5 meters.
+The weight of the aircraft should not be more than 3 Kg (For all missions).
+Lithium Polymer (LiPo) battery is allowed. The battery should not have a rated capacity of more than 2200 mAh and the rated voltage should not be more than 12 V.
+The teams must use transmitters and receivers with telemetry capability (for example Turnigy TGY-i6). The receiver should relay the voltage of the battery during flight to the transmitter using an on-board voltage sensor. Mission Constraints
+Aircraft will use ground rolling take-off and landing:
+Missions will simulate take-off from a small austere field.
+The aircraft must take off within 60 ft.
