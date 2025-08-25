@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Connection Test - STEM Careers</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 { text-align: center; margin-bottom: 30px; }
+        
+        .test-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        
+        .status.success { background: #4CAF50; }
+        .status.error { background: #f44336; }
+        .status.pending { background: #ff9800; }
+        
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        #console {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            margin-top: 20px;
+        }
+        
+        .home-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .home-link a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Firebase Connection Test</h1>
+        <p style="text-align: center; font-size: 1.1em;">Debug Firebase and Firestore connectivity</p>
+        
+        <div class="test-section">
+            <h3>🔍 Connection Status</h3>
+            <p>Firebase Config: <span id="configStatus" class="status pending">CHECKING...</span></p>
+            <p>Firebase App: <span id="appStatus" class="status pending">CHECKING...</span></p>
+            <p>Firestore DB: <span id="firestoreStatus" class="status pending">CHECKING...</span></p>
+            <p>Analytics Ready: <span id="analyticsStatus" class="status pending">CHECKING...</span></p>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Firebase Tests</h3>
+            <button onclick="testFirebaseConfig()">Test Config</button>
+            <button onclick="testFirestoreWrite()" id="writeBtn" disabled>Test Firestore Write</button>
+            <button onclick="testAnalyticsEvent()" id="analyticsBtn" disabled>Test Analytics Event</button>
+            <button onclick="clearConsole()">Clear Console</button>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 Console Output</h3>
+            <div id="console">Initializing Firebase connection test...\n</div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔧 Troubleshooting Tips</h3>
+            <ul>
+                <li><strong>Config Issues:</strong> Check Firebase configuration in HTML head</li>
+                <li><strong>Firestore Issues:</strong> Verify security rules allow 'create' operations</li>
+                <li><strong>Network Issues:</strong> Check browser network tab for failed requests</li>
+                <li><strong>Console Errors:</strong> Look for red error messages in browser console</li>
+            </ul>
+        </div>
+        
+        <div class="home-link">
+            <a href="index.html">← Back to Homepage</a>
+        </div>
+    </div>
+
+    <!-- Firebase Configuration (same as main site) -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAzMYEJYKtbMbjWcByRth2QUyLjVqLOHto",
+            authDomain: "stem-careers-pakistan.firebaseapp.com",
+            projectId: "stem-careers-pakistan",
+            storageBucket: "stem-careers-pakistan.firebasestorage.app",
+            messagingSenderId: "18421361173",
+            appId: "1:18421361173:web:ff50dc39894a9f5099fc1c",
+            measurementId: "G-C8Y8SWVKRR"
+        };
+        
+        window.firebaseConfig = firebaseConfig;
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8Y8SWVKRR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C8Y8SWVKRR');
+    </script>
+
+    <!-- Analytics System -->
+    <script src="analytics.js"></script>
+    
+    <!-- Test Functions -->
+    <script>
+        let consoleElement = document.getElementById('console');
+        let firebaseApp = null;
+        let firestoreDb = null;
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            consoleElement.textContent += `[${timestamp}] ${prefix} ${message}\n`;
+            consoleElement.scrollTop = consoleElement.scrollHeight;
+        }
+        
+        function clearConsole() {
+            consoleElement.textContent = 'Console cleared\n';
+        }
+        
+        function updateStatus(elementId, success, message = '') {
+            const element = document.getElementById(elementId);
+            element.textContent = success ? 'CONNECTED' : 'FAILED';
+            element.className = `status ${success ? 'success' : 'error'}`;
+            if (message) {
+                log(message, success ? 'success' : 'error');
+            }
+        }
+        
+        async function testFirebaseConfig() {
+            log('Testing Firebase configuration...');
+            
+            if (window.firebaseConfig) {
+                log(`✓ Config found for project: ${window.firebaseConfig.projectId}`);
+                log(`✓ API Key: ${window.firebaseConfig.apiKey.substring(0, 10)}...`);
+                log(`✓ Auth Domain: ${window.firebaseConfig.authDomain}`);
+                updateStatus('configStatus', true, 'Firebase config is valid');
+                
+                // Enable other tests
+                document.getElementById('writeBtn').disabled = false;
+                document.getElementById('analyticsBtn').disabled = false;
+                
+                return true;
+            } else {
+                updateStatus('configStatus', false, 'Firebase config not found');
+                return false;
+            }
+        }
+        
+        async function testFirestoreWrite() {
+            log('Testing Firestore write operation...');
+            
+            try {
+                // Import Firebase modules
+                const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js');
+                const { getFirestore, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js');
+                
+                // Initialize if not already done
+                if (!firebaseApp) {
+                    firebaseApp = initializeApp(window.firebaseConfig);
+                    log('✓ Firebase app initialized');
+                    updateStatus('appStatus', true);
+                }
+                
+                if (!firestoreDb) {
+                    firestoreDb = getFirestore(firebaseApp);
+                    log('✓ Firestore database connected');
+                    updateStatus('firestoreStatus', true);
+                }
+                
+                // Test write operation
+                const testDoc = {
+                    test_type: 'connection_test',
+                    timestamp: new Date().toISOString(),
+                    message: 'Firebase test from debug page',
+                    user_agent: navigator.userAgent.substring(0, 100),
+                    page: 'firebase-test'
+                };
+                
+                log('📝 Attempting to write test document...');
+                
+                const docRef = await addDoc(collection(firestoreDb, 'analytics_events'), {
+                    ...testDoc,
+                    server_timestamp: serverTimestamp()
+                });
+                
+                log(`✅ SUCCESS! Document written with ID: ${docRef.id}`, 'success');
+                log('🎉 Firestore is working correctly!', 'success');
+                
+                return true;
+                
+            } catch (error) {
+                log(`❌ Firestore write failed: ${error.message}`, 'error');
+                log(`🔍 Error code: ${error.code || 'unknown'}`, 'error');
+                
+                if (error.code === 'permission-denied') {
+                    log('🚫 PERMISSION DENIED - Check your Firestore security rules', 'error');
+                    log('💡 Rules should allow: allow create: if true; for analytics_events', 'error');
+                } else if (error.code === 'failed-precondition') {
+                    log('⚠️ Firestore not enabled - Enable Firestore in Firebase Console', 'error');
+                }
+                
+                updateStatus('firestoreStatus', false, 'Firestore write failed');
+                return false;
+            }
+        }
+        
+        async function testAnalyticsEvent() {
+            log('Testing Analytics event...');
+            
+            if (window.stemAnalytics && window.stemAnalytics.initialized) {
+                window.stemAnalytics.trackProgramInterest('Firebase Test', 'debug_test');
+                log('✅ Analytics event fired successfully', 'success');
+                updateStatus('analyticsStatus', true);
+            } else {
+                log('❌ STEM Analytics not initialized', 'error');
+                updateStatus('analyticsStatus', false);
+            }
+        }
+        
+        // Initialize tests when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            log('🚀 Starting Firebase connection tests...');
+            
+            // Wait a moment for everything to initialize
+            setTimeout(async () => {
+                const configOk = await testFirebaseConfig();
+                
+                if (configOk) {
+                    log('🔄 Config verified, ready for manual tests');
+                } else {
+                    log('❌ Configuration issues detected', 'error');
+                }
+                
+                // Check if analytics initialized
+                setTimeout(() => {
+                    if (window.stemAnalytics && window.stemAnalytics.initialized) {
+                        updateStatus('analyticsStatus', true, 'STEM Analytics ready');
+                    } else {
+                        updateStatus('analyticsStatus', false, 'STEM Analytics failed to initialize');
+                    }
+                }, 2000);
+                
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
