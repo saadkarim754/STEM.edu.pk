@@ -676,6 +676,85 @@ body {
     box-shadow: none;
 }
 
+/* Mobile Optimization for Image Slideshow */
+@media (max-width: 768px) {
+    .hero-visual {
+        height: auto;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+    
+    .bottom-right-image {
+        position: static;
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        margin: 30px auto 0 auto;
+        bottom: auto;
+        right: auto;
+        border-radius: 15px;
+        box-shadow: 0 0 20px 10px rgba(0,0,0,0.25);
+    }
+    
+    .floating-elements {
+        display: none; /* Hide floating elements on mobile for better performance */
+    }
+    
+    .animated-background .bg-shape {
+        opacity: 0.3; /* Reduce background animation intensity */
+    }
+}
+
+@media (max-width: 480px) {
+    .bottom-right-image {
+        max-width: 300px;
+        height: 200px;
+        margin: 20px auto 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 0 15px 8px rgba(0,0,0,0.2);
+    }
+    
+    .hero-visual {
+        min-height: 350px;
+        padding: 15px 0;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+    .bottom-right-image {
+        max-width: 280px;
+        height: 180px;
+        margin: 15px auto 0 auto;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+        gap: 30px;
+    }
+    
+    .hero-visual {
+        min-height: 320px;
+        padding: 10px 0;
+    }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+    .slide-image {
+        transform: translateZ(0); /* Enable hardware acceleration */
+        backface-visibility: hidden;
+    }
+    
+    .image-slideshow {
+        will-change: transform; /* Optimize for animations */
+    }
+}
+
 .floating-elements {
     position: absolute;
     width: 100%;
@@ -1617,7 +1696,14 @@ body {
     }
 
     .hero-visual {
-        height: 300px;
+        height: auto;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        order: -1; /* Move visual above text on mobile */
     }
 
     .about-content {
