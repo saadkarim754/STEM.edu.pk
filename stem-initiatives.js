@@ -306,7 +306,8 @@ function initializeScrollAnimations() {
     cards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
-        card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
+        // Slow down animation: increase duration and delay
+        card.style.transition = `all 1.5s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.3}s`;
         observer.observe(card);
     });
 }

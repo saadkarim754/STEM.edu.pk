@@ -5,8 +5,16 @@
     min-height: 80vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    background: linear-gradient(135deg, #232946 0%, #1a1a2e 60%, #274690 100%);
     padding: 120px 0 80px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .initiatives-hero {
+        /* Keep dark mode as is, or use previous gradient */
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+        padding: 120px 0 80px;
+    }
 }
 
 .initiatives-hero .hero-content {
@@ -63,7 +71,7 @@
     background: var(--background-color);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -81,7 +89,7 @@
     height: 4px;
     background: var(--gradient-primary);
     transform: scaleX(0);
-    transition: transform 0.4s ease;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .initiative-card:hover::before {
@@ -97,7 +105,7 @@
 .card-content {
     padding: 30px;
     display: block;
-    transition: all 0.4s ease;
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card-icon {
@@ -289,7 +297,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .close-btn:hover {
