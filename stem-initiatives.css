@@ -35,9 +35,9 @@
     color: var(--text-secondary);
     margin-bottom: 40px;
     line-height: 1.6;
-    animation: none; /* Remove animation to prevent weird behavior */
-    opacity: 1; /* Ensure it's visible immediately */
-    transform: none; /* Remove any transforms */
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 .initiatives-hero .hero-stats {
