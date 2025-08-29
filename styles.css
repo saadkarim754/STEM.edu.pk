@@ -688,16 +688,7 @@ body {
     }
     
     .bottom-right-image {
-        position: relative;
-        width: 100%;
-        max-width: 320px;
-        height: 220px;
-        margin: 0 auto;
-        bottom: auto;
-        right: auto;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        display: block;
+        display: none; /* Hide slideshow on mobile devices */
     }
     
     .floating-elements {
