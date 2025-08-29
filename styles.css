@@ -632,6 +632,158 @@ body {
     box-shadow: var(--shadow-large);
 }
 
+.btn-results {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    color: white;
+    border: 2px solid transparent;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-results:hover {
+    background: linear-gradient(135deg, #B91C1C 0%, #991B1B 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+/* Files.html - Results Page Styles */
+.results-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 60vh;
+}
+
+.results-grid, .papers-grid, .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.result-category, .paper-category {
+    background: var(--surface-color);
+    padding: 30px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium);
+}
+
+.category-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.result-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.result-card, .resource-card {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.result-card:hover, .resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+}
+
+.featured-result {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    border: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-result::before {
+    content: "Available Now";
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.result-year {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.featured-result:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+    border-color: var(--secondary-color);
+}
+
+.result-link, .resource-link, .paper-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(139, 92, 246, 0.1);
+    transition: var(--transition);
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.result-link:hover, .resource-link:hover, .paper-link:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.paper-item {
+    background: var(--background-color);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+
+.paper-item h4 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.paper-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .results-grid, .papers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .result-category, .paper-category {
+        padding: 20px;
+    }
+    
+    .paper-links {
+        justify-content: center;
+    }
+}
+
 .hero-visual {
     position: relative;
     height: 500px;
@@ -680,11 +832,11 @@ body {
 @media (max-width: 768px) {
     .hero-visual {
         height: auto;
-        min-height: 300px;
+        min-height: 200px; /* Reduced from 300px since no image */
         display: block;
         position: relative;
-        margin-top: 30px;
-        padding: 20px;
+        margin-top: 20px; /* Reduced margin */
+        padding: 15px; /* Reduced padding */
     }
     
     .bottom-right-image {
