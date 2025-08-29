@@ -35,6 +35,7 @@
     color: var(--text-secondary);
     margin-bottom: 40px;
     line-height: 1.6;
+    animation: fadeInUp 2.5s ease-out 0.5s both;
 }
 
 .initiatives-hero .hero-stats {
